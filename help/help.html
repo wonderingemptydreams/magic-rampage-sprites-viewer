@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Página de ajuda para Magic Rampage Sprites Viewer</title>
+        <link rel="stylesheet" href="../css/style.css">
+    </head>
+    <body>
+        <header>
+            <h1 class="main-title">Página de ajuda</h1>
+            <p>Página de ajuda para o website "Magic Rampage Sprites Viewer".</p>
+        </header>
+        <main>
+            <section class="section">
+                <header>
+                    <h2>1. Propósito</h2>
+                </header>
+                <p>O projeto "Magic Rampage Sprites Viewer" se trata de uma ferramenta que tem o objetivo centrado em ser de fácil utilização e o mais acessível possível focando na visualização de sprites dos arquivos utilizados no jogo eletrônico <a href="https://play.google.com/store/apps/details?id=com.asanteegames.magicrampage">Magic Rampage</a>.</p>
+                <p>É uma ferramenta base para um projeto futuro em desenvolvimento que conta com a visualização de sprites como umas de suas características.</p>
+                <p class="hint">Encontre mais projetos no meu GitHub: <a href="https://github.com/wonderingemptydreams/">wonderingemptydreams</a>.</p>
+            </section>
+            <section class="section">
+                <header>
+                    <h2>2. Contexto</h2>
+                </header>
+                <p>O Magic Rampage se utiliza de texture atlas (<a href="https://en.wikipedia.org/wiki/Texture_atlas">texture atlas na Wikipedia</a>) para gerar alguns de seus componentes, como animações de armaduras, monstros e chefes.</p>
+                <p>Este projeto, desenvolvido em HTML (e originalmente publicado no website do GitHub), faz a leitura dos arquivos relacionados ao conceito de texture atlas do jogo e apresenta uma exibição dos sprites utilizados nestes componentes.</p>
+                <p class="hint">Todos os arquivos necessários para tal leitura podem ser encontrados nos arquivos do jogo (saiba mais na <a href="#texture-atlas-files">seção 5</a>).</p>
+            </section>
+            <section class="section">
+                <header>
+                    <h2>3. Compatibilidade</h2>
+                </header>
+                <p>Pela razão de ser uma aplicação desenvolvida para navegadores web, é esperado alguns requisitos específicos para o funcionamento.</p>
+                <p class="hint">Caso você esteja utilizando um navegador moderno na versão mais recente, esta seção poderá ser ignorada.</p>
+                <p>O recurso essencial para o funcionamento da ferramenta no lado do cliente é o JavaScript; tentar a executar em navegadores com esse recurso desativado resultará na disfunção da aplicação. A seguinte lista contém links para o website da MDN (<a href="https://developer.mozilla.org/en-US/">Mozilla Developer Network</a>) quem mostram a compatibilidade dos navegadores (e a versão mínima necessária) com os componentes potencialmente nocivos para a execução da aplicação.</p>
+                <p class="warning">Incompatibilidade com os recursos listados pode ser razão para a disfunção da aplicação.</p>
+                <ul>
+                    <li>Compatibilidade com o elemento canvas: <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/canvas#browser_compatibility">Seção "Browser compatibility" do &lt;canvas&gt;</a>;</li>
+                    <li>Compatibilidade com a interface CanvasRenderingContext2D: <a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D#browser_compatibility">Seção "Browser compatibility" do CanvasRenderingContext2D</a>;</li>
+                    <li>Compatibilidade com a interface DOMParser: <a href="https://developer.mozilla.org/en-US/docs/Web/API/DOMParser#browser_compatibility">Seção "Browser compatibility" do DOMParser</a>;</li>
+                    <li>Compatibilidade com a interface File: <a href="https://developer.mozilla.org/en-US/docs/Web/API/File#browser_compatibility">Seção "Browser compatibility" do File</a>;</li>
+                    <li>Compatibilidade com a interface FileReader: <a href="https://developer.mozilla.org/en-US/docs/Web/API/FileReader#browser_compatibility">Seção "Browser compatibility" do FileReader</a>.</li>
+                </ul>
+            </section>
+            <section class="section">
+                <header>
+                    <h2>4. Utilização</h2>
+                </header>
+                <p>A utilização da ferramenta se resume em duas ações base e uma opcional: a importação dos arquivos de texture atlas (obrigatório); a visualização dos sprites (ação voluntária); e a exportação dos arquivos de sprites (opcional).</p>
+                <p>No website, o formulário presente na <a href="../index.html#section-files">seção "Arquivos"</a> deve ser preenchido com os devidos arquivos, ou a aplicação não irá funcionar corretamente.</p>
+                <p>O primeiro campo, denominado de "imagem do texture atlas" deve ser preenchido com uma imagem de texture atlas (ou spritesheet); o segundo campo, denominado de "arquivo XML do texture atlas" deve ser preenchido com um arquivo do tipo XML (<abbr>Extensible Markup Language</abbr>) no contexto de texture atlas.</p>
+                <p class="warning">O formulário é sempre validado antes da confirmação. Campos vazios resultarão em um alerta.</p>
+                <p>Utilize a opção "Reiniciar formulário" para limpar todos os campos.</p>
+                <p>Após a confirmação do formulário, você poderá navegar entre os sprites utilizando os botões de controle "Anterior" e "Próximo" (previamente desabilitados).</p>
+                <p>Durante a navegação, caso você queira exportar o sprite apresentado no quadro de exibição, utilize o botão "Exportar sprite atual" da <a href="../index.html#optional-options">seção "Opções adicionais"</a>.</p>
+                <p>Caso você queira exportar todos os sprites presentes no arquivo XML do texture atlas, utilize o botão "Exportar todos os sprites" da <a href="../index.html#optional-options">seção "Opções adicionais"</a>.</p>
+            </section>
+            <section class="section" id="texture-atlas-files">
+                <header>
+                    <h2>5. Arquivos de texture atlas</h2>
+                </header>
+                <p>Como já citado, os arquivos para o preenchimento do formulário estão diretamente relacionados com o conceito de texture atlas; nesta você irá entender como funciona a obtenção desses arquivos.</p>
+                <p class="warning">É necessário a disponibilidade dos arquivos do jogo (em específico, arquivos do diretório "entities") para executar os passos citados. Você pode obter uma cópia dos arquivos no meu diretório do GitHub: <a href="https://github.com/wonderingemptydreamz/magic-rampage-steam">magic-rampage-steam</a>.</p>
+                <p>Ambos os arquivos de texture atlas podem ser encontrados no diretório "entities".</p>
+                <p class="hint">É recomendado que você previamente tenha a imagem individualmente separada ou saiba seu nome para maior praticidade.</p>
+                <figure class="figure">
+                    <img class="img img-screenshot" src="../img/screenshots/screenshot-from-entities-folder.png" alt="Captura de tela do diretório &quot;entities&quot;.">
+                    <figcaption>Captura de tela do diretório "entities" dos arquivos do jogo.</figcaption>
+                </figure>
+            </section>
+            <section class="section">
+                <header>
+                    <h3>5.1. A imagem</h3>
+                </header>
+                <p>A imagem é uma coleção de sprites em conjunto. Ela geralmente tem um fundo transparente e várias imagens menores para representar, por exemplo, o estado do personagem (no caso de armaduras).</p>
+                <p class="warning">Uma imagem que apresenta apenas um elemento visível provavelmente não se encaixa no caso; um arquivo XML correspondente não será existente.</p>
+                <figure class="figure">
+                    <img class="img img-screenshot" src="../img/screenshots/screenshot-from-image-search-on-entities-folder.png" alt="Captura de uma pesquisa no diretório &quot;entities&quot;.">
+                    <figcaption>Captura de tela de uma pesquisa por imagens no diretório "entities".</figcaption>
+                </figure>
+                <p>Se pode observar a quantidade de arquivos no canto inferior esquerdo da captura de tela; 1474 itens.</p>
+            </section>
+            <section class="section">
+                <header>
+                    <h3>5.2. O arquivo XML</h3>
+                </header>
+                <p>O arquivo XML é responsável por configurar os sprites e é composto por uma espécie de lista; ele se baseia na imagem, contendo determinados atributos para definir a posição do sprite, sua altura e sua largura, por exemplo.</p>
+                <figure class="figure">
+                    <img class="img img-screenshot" src="../img/screenshots/screenshot-from-xml-search-on-entities-folder.png" alt="Captura de uma pesquisa no diretório &quot;entities&quot;.">
+                    <figcaption>Captura de tela de uma pesquisa por arquivos XML no diretório "entities".</figcaption>
+                </figure>
+                <p>Se pode observar a quantidade de arquivos no canto inferior esquerdo da captura de tela; 461 itens.</p>
+                <p>A diferença da quantidade de imagens para a quantidade de arquivos XML se dá por conta que a maior parte das imagens não são construídas a partir da técnica de texture atlas, consequentemente não requerindo um arquivo XML de configuração.</p>
+            </section>
+            <section class="section">
+                <header>
+                    <h3>5.2. Exemplos</h3>
+                </header>
+                <figure class="figure">
+                    <img class="img" src="../img/example/armor_cloth_1b.png" alt="Texture atlas do traje do jumpman.">
+                    <figcaption>Texture atlas utilizado pelo traje do jumpman.</figcaption>
+                </figure>
+                <p>A figura anterior, como descrita, mostra o texture atlas do traje do jumpman; ela é composta por imagens menores que representam cada estado do personagem.</p>
+                <p>O arquivo é chamado de "armor_cloth_1b.png". A lógica por trás deste conceito se baseia em um outro arquivo de configuração com o mesmo nome (sem a extensão ".png"): o arquivo XML.</p>
+                <p>Para obtermos o arquivo XML correspondente, basta fazermos uma pesquisa simples (utilizando de um explorador de arquivos convencional) no diretório "entities". Para este caso, devemos pesquisar por "armor_cloth_1b" (novamente, a pesquisa não deve incluir a extensão do arquivo ".png").</p>
+                <figure class="figure">
+                    <img class="img img-screenshot" src="../img/screenshots/screenshot-from-jumpman-search-on-entities-folder.png" alt="Pesquisa pelo nome traje do jumpman nos arquivos do jogo.">
+                    <figcaption>Pesquisa em um explorador de arquivos pelo nome traje do jumpman nos arquivos do jogo.</figcaption>
+                </figure>
+                <p>Esses dois arquivos são o suficiente para a visualização dos sprites após a configuração do formulário.</p>
+            </section>
+        </main>
+        <footer>
+            <address>
+                Desenvolvido por wonderingemptydreams; entre em contato via e-mail: <a href="mailto:wonderingemptydreams@gmail.com">wonderingemptydreams@gmail.com</a>.
+            </address>
+            <p>Magic Rampage Sprites Viewer © 2024 by wonderingemptydreams is licensed under CC BY-SA 4.0.</p>
+        </footer>
+    </body>
+</html>
