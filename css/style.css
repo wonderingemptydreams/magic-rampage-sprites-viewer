@@ -24,10 +24,16 @@
     padding: .5em;
 }
 
-.canvas {
-    box-sizing: border-box;
+.div-canvas {
     border: medium solid black;
     border-radius: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    line-height: 0;
+}
+
+.canvas {
     max-width: 100%;
 }
 

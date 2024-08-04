@@ -21,12 +21,13 @@
                 <p>Preencha o formulário seguinte para obter a visualização dos sprites; ambos os campos são necessários.</p>
                 <p class="hint">Veja quais são os tipos de arquivos necessários (e como obtê-los) na seção "Arquivos de texture atlas" da página de ajuda: <a href="help/help.html#texture-atlas-files">seção 5 da página de ajuda</a>.</p>
                 <form class="form" id="form-files">
-                    <p><label>Importar imagem do texture atlas: <input name="image" required type="file"></label></p>
-                    <p><label>Importar arquivo XML do texture atlas: <input name="xml" required type="file"></label></p>
+                    <p><label>Importar imagem do texture atlas: <input accept="image/*" name="image" required type="file"></label></p>
+                    <p><label>Importar arquivo XML do texture atlas: <input accept=".xml" name="xml" required type="file"></label></p>
+                    <p><label><input checked name="omit-empty" type="checkbox"> Omitir sprites potencialmente vazios</label></p>
                     <p><button class="button form-button" type="submit">Visualizar sprites</button></p>
                     <p><button class="button form-button" type="reset">Reiniciar formulário</button></p>
                 </form>
-                <p class="warning">Certifique-se de que a imagem tem a extensão ".png" e que o arquivo XML tem a extensão ".xml". Essa pode ser uma das razões para a disfunção da ferramenta.</p>
+                <p class="warning">Certifique-se de que a imagem tenha a extensão ".png" e que o arquivo XML tenha a extensão ".xml".</p>
             </section>
             <section id="section-visualization">
                 <header>
@@ -36,17 +37,19 @@
                 <section>
                     <h3>Controle de exibição</h3>
                     <p>Controle a exibição dos sprites (ativo apenas após o carregamento do da imagem e do arquivo XML do texture atlas).</p>
+                    <p><button class="button" disabled id="reset-position" type="button">Reiniciar posição da visualização</button></p>
                     <menu class="menu">
                         <li class="menu-li"><button class="button" disabled type="button" id="button-previous">Anterior</button></li>
                         <li class="menu-li"><button class="button" disabled type="button" id="button-next">Próximo</button></li>
                     </menu>
                 </section>
-                <div>
+                <div class="div-canvas">
                     <canvas class="canvas" id="canvas-main">
                         <p>Parece que seu navegador não tem suporte ao elemento gráfico canvas.</p>
                         <p>Consulte a tabela de compatibilidade dos navegadores: <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/canvas#browser_compatibility">Seção "Browser compatibility" do &lt;canvas&gt;: The Graphics Canvas element, em MDN</a>.</p>
                     </canvas>
                 </div>
+                <p>Nome do sprite: <span id="sprite-name">aguardando confirmação</span>.</p>
             </section>
             <section id="optional-options">
                 <h2>Opções adicionais</h2>
